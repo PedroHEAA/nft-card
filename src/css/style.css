@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+body{
+    background-color: hsl(217, 54%, 11%);
+    font-family: 'Outfit', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    max-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "card-info"
+    "creator-info";
+    grid-template-columns: 250px;
+    grid-template-rows: 1fr 40px;
+    height: 500px;
+    border-radius: 10px;
+    gap: 30px;
+    background-color: hsl(216, 50%, 16%);
+    padding: 20px;
+}
+
+.card-info{
+    grid-area: card-info;
+}
+
+.card-info img{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-info .image-link{
+    position: relative;
+    display: flex;
+}
+
+.card-info .image-link::before{
+    content: "";
+    background-color: hsl(178, 100%, 50%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.card-info .image-link::after{
+    position: absolute;
+    content: "";
+    background: url(../images/icon-view.svg) no-repeat center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.card-info .image-link:hover::before{
+    opacity: 0.4;
+}
+
+.card-info .image-link:hover::after{
+    opacity: 1;
+}
+
+.card-info h1{
+    font-size: 20px;
+    color: hsl(0, 0%, 100%);
+    margin-top: 15px;
+}
+
+.card-info h1:hover{
+    color: hsl(178, 100%, 50%);
+}
+
+.card-info .description{
+    color: #8BACD9;
+    margin-top: 15px;
+}
+
+.card-info .nft-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card-info .nft-info .price{
+    color: hsl(178, 100%, 50%);
+}
+
+.card-info .nft-info .days{
+    color: hsl(215, 51%, 70%);
+}
+
+.card-info .nft-info div{
+    display: flex;
+    gap: 6px;
+}
+
+hr{
+    margin-top: 20px;
+    width: 100%;
+    border: solid 1px hsl(215, 32%, 27%);
+}
+
+.creator-info{
+    grid-area: creator-info;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -30px;
+}
+
+.creator-info img{
+    border-radius: 50px;
+    border: solid 2px white;
+}
+
+.creator-info a span{
+    color: hsl(215, 51%, 70%);
+}
+
+.creator-info a{
+    color: hsl(0, 0%, 100%);
+}
+
+.creator-info a:hover{
+    color: hsl(178, 100%, 50%);
+}
